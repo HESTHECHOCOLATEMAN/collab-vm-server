@@ -36,7 +36,7 @@ Please email rightowner@gmail.com for any assistance.
 
 #include "guacamole/user-handlers.h"
 #include "guacamole/unicode.h"
-#include <uuid.h>
+#include <ossp/uuid.h>
 #include "rapidjson/writer.h"
 #include "rapidjson/reader.h"
 #include "rapidjson/stringbuffer.h"
