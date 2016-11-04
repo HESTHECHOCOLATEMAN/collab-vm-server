@@ -17,6 +17,8 @@ By default when you download a pre-configured copy of collab-vm-server it will h
 # Compilation
 Compilation is semi-complicated as this was intended for personal use only, sorry. In the future there will probably be easier compilation methods.
 
+By the way, compilation was only tested on i386 and amd64 machines. I don't know if this will work on any other architecture but theoretically Collab VM Server should be able to run on armhf or powerpc.
+
 ## Windows
 You need Visual Studio 2015 to compile the server on Windows. Community (the free version) will work just fine.
 
@@ -24,18 +26,20 @@ To compile on Microsoft Windows you need the dependencies for Guacamole. You can
 
 Open the collab-vm-server.sln file and make sure before anything you go to Project > collab-vm-server Properties > C/C++ > Additional Include Directories then make sure to select the location of the header files. Next go to Project > collab-vm-server Properties > Linker > General and change the Additional Library Directories to include the location of the .dll and .lib files.
 
-To compile the database files you need ODB, available here: http://www.codesynthesis.com/products/odb/download.xhtml When you have downloaded it go to src/Database and type this command in:
-
-odb -d sqlite -s -q Config.h VMSettings.h
-
-And everything should work after that.
+To compile the database files you need ODB, available here: http://www.codesynthesis.com/products/odb/download.xhtml Grab the .deb, .rpm, or whatever you might have, and type odb when its done installing to make sure its working.
 
 ## Linux
 This is specifically for Debian-based distributions like Ubuntu but it really should work in most distributions of Linux. Like Windows the dependencies for Guacamole are required. You can download these from the Ubuntu package manager. 
 
-When you've got all the dependencies for Guacamole you need to get ODB. Again it is available in the link above. This requires GCC 6.
+When you've got all the dependencies for Guacamole you need to get ODB. Again it is available in the link above. This is compiled with GCC 6, although it might work with older versions. 
 
-Go into source/collab-vm-server and type the following commands
+The first thing we need to do is compile the databases. When you have odb ready, go to collab-vm-server/src/Database and type this command in:
+
+odb -d sqlite -s -q Config.h VMSettings.h
+
+Make sure you have the mysql and sqlite database runtime libraries before compiling, again available in the codesynthesis website. Just extract the odb folder from both of the zip files into collab-vm-server/src.
+
+Next we go into the collab-vm-server folder and type in the following commands:
 
 aclocal
 
@@ -45,14 +49,18 @@ autoconf
 
 ./configure
 
-To compile the databases the same instructions for Windows applies, get ODB for Ubuntu or whatever distribution you are using and type in the following command:
-
-odb -d sqlite -s -q Config.h VMSettings.h
+Then finally type make to compile the whole thing.
 
 If you cannot compile open src/Makefile.am and make sure the library paths are correct.
 
 ## Macintosh
-I do not have a Macintosh computer so I don't know how to compile it nor do I know if it's possible, but it should be relatively the same as the Linux instructions. If anyone can write compilation instructions for the Mac, let me know.
+I don't have a Macintosh computer so these instructions might be different on Mac OS. If anyone could write compilation instructions for the Mac this would be vastly appreciated.
+
+## BSD
+I don't have a computer running BSD so again the instructions could be different, although it should be pretty much the same as Linux. If anyone could write compilation instructions for BSD-based operating systems this would also be vastly appreciated.
+
+## Any other operating systems
+Collab VM Server is only supported on Windows and Unix-like operating systems, so I don't know if it would run on any other operating system. There would not be much point on porting Collab VM Server to a non-Linux/BSD/Mac/Windows system anyways because QEMU only runs on those platforms.
 
 # License
 Collab VM Server, as well as the Web App and Admin Web App are licensed under the [Apache License](https://www.apache.org/licenses/LICENSE-2.0).
