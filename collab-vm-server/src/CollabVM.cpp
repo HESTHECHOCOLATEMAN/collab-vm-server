@@ -8,6 +8,7 @@ Special Thanks:
 CHOCOLATEMAN
 Colonel Seizureton/Colonel Munchkin
 CtrlAltDel
+FluffyVulpix
 hannah
 LoveEevee
 Matthew
