@@ -66,6 +66,7 @@ Collab VM Server is only supported on Windows and Unix-like operating systems, s
 * All of Guacamole's Dependencies (https://guacamole.incubator.apache.org/doc/gug/installing-guacamole.html)
 * Asio (without Boost)
 * Guacamole
+* libsqlite3-dev
 * ODB
 * ODB MySQL
 * ODB SQLite
