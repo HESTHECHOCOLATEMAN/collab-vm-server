@@ -62,5 +62,16 @@ I don't have a computer running BSD so again the instructions could be different
 ## Any other operating systems
 Collab VM Server is only supported on Windows and Unix-like operating systems, so I don't know if it would run on any other operating system. There would not be much point on porting Collab VM Server to a non-Linux/BSD/Mac/Windows system anyways because QEMU only runs on those platforms.
 
+# Dependencies
+* All of Guacamole's Dependencies (https://guacamole.incubator.apache.org/doc/gug/installing-guacamole.html)
+* Asio (without Boost)
+* Guacamole
+* ODB
+* ODB MySQL
+* ODB SQLite
+* RapidJSON
+* UriParser
+* Websocket++
+
 # License
 Collab VM Server, as well as the Web App and Admin Web App are licensed under the [Apache License](https://www.apache.org/licenses/LICENSE-2.0).
