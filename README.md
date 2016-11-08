@@ -49,7 +49,7 @@ autoconf
 
 ./configure
 
-Then finally type make to compile the whole thing.
+Then finally, type make to compile the whole thing.
 
 If you cannot compile open src/Makefile.am and make sure the library paths are correct.
 
