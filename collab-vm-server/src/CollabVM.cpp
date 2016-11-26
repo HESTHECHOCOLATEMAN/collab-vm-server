@@ -1845,7 +1845,7 @@ bool CollabVMServer::ValidateUsername(const std::string& username)
 	char c = username[0];
 	if (!((c >= 'A' && c <= 'Z') || // Uppercase letters
 		(c >= 'a' && c <= 'z') || // Lowercase letters
-		(c >= '1' && c <= '9') || // Numbers
+		(c >= '0' && c <= '9') || // Numbers
 		c == '_' || c == '-' || c == '.')) // Underscores, dashes, dots
 		return false;
 
@@ -1856,7 +1856,7 @@ bool CollabVMServer::ValidateUsername(const std::string& username)
 		// Only allow the following characters
 		if ((c >= 'A' && c <= 'Z') || // Uppercase letters
 			(c >= 'a' && c <= 'z') || // Lowercase letters
-			(c >= '1' && c <= '9') || // Numbers
+			(c >= '0' && c <= '9') || // Numbers
 			c == '_' || c == '-' || c == '.') // Spaces, underscores, dashes, dots
 		{
 			prev_space = false;
@@ -1875,7 +1875,7 @@ bool CollabVMServer::ValidateUsername(const std::string& username)
 	c = username[username.length()-1];
 	if ((c >= 'A' && c <= 'Z') || // Uppercase letters
 		(c >= 'a' && c <= 'z') || // Lowercase letters
-		(c >= '1' && c <= '9') || // Numbers
+		(c >= '0' && c <= '9') || // Numbers
 		c == '_' || c == '-' || c == '.') // Underscores, dashes, dots
 		return true;
 		
