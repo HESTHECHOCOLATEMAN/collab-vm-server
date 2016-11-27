@@ -350,9 +350,9 @@ void CollabVMServer::Send404Page(Server::connection_ptr& con, std::string& path)
 {
 	ostringstream ss;
 	ss << "<!DOCTYPE html><html><head>"
-		"<title>Error 404 (Resource not found)</title><body>"
-		"<h1>Error 404</h1>"
-		"<p>The requested URL " << path << " was not found on this server.</p>"
+		"<title>FUCK OFF</title><body>"
+		"<h1>FUCK OFF HACKERS EAT MY SHIT</h1>"
+		"<p>Error 503," << path << " was not found on this server. Somebody shot the server with a 12-gauge. Please contact your administrator</p>"
 		"</body></head></html>";
 
 	con->set_body(ss.str());
