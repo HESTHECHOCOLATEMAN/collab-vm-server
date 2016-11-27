@@ -867,10 +867,10 @@ private:
 	 */
 	uint8_t chat_history_count_;
 
-	const size_t kMaxChatMsgLen = 100;
+	const size_t kMaxChatMsgLen = 200;
 
-	const size_t kMinUsernameLen = 3;
-	const size_t kMaxUsernameLen = 20;
+	const size_t kMinUsernameLen = 1;
+	const size_t kMaxUsernameLen = 25;
 
 	/**
 	 * Maximum number of login attempts before the IP is blocked.
