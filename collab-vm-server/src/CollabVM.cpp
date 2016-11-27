@@ -1,28 +1,4 @@
-/* Collab VM 
-Created By:
-Cosmic Sans 
-Dartz
-Geodude
-
-Special Thanks:
-CHOCOLATEMAN
-Colonel Seizureton/Colonel Munchkin
-CtrlAltDel
-FluffyVulpix
-hannah
-LoveEevee
-Matthew
-Vanilla
-and the rest of the Collab VM Community for all their help over the years, including, but of course not limited to: donating, using the site, telling their friends/family, being a great help, and more.
-
-A special shoutout to the Collab VM community for being such a great help. You've made the last 2 years great. Here is the team's special thanks to you - the Collab VM Server Source Code. We really hope you enjoy and we hope you continue using the website. Thank you all.
-
-The Webframe source code is here: https://github.com/computernewb/collab-vm-web-app
-
-Please email rightowner@gmail.com for any assistance.
-
-~Cosmic Sans, Dartz, and Geodude
-*/
+/* Anus (TM) */
 #include "CollabVM.h"
 #include "GuacInstructionParser.h"
 
@@ -231,7 +207,7 @@ CollabVMServer::CollabVMServer(asio::io_service& service) :
 	vm_preview_timer_(service),
 	ip_data_timer(service),
 	ip_data_timer_running_(false),
-	guest_rng_(1000, 99999),
+	guest_rng_(1, 999999),
 	rng_(steady_clock::now().time_since_epoch().count()),
 	chat_history_(new ChatMessage[database_.Configuration.ChatMsgHistory]),
 	chat_history_begin_(0),
@@ -1656,7 +1632,7 @@ void CollabVMServer::UserStartedVote(const VMController& vm, UserList& users, Co
 {
 	user.ip_data.votes[&vm] = IPData::VoteDecision::kYes;
 
-#define MSG " started a vote to reset the VM."
+#define MSG " started a vote to reset the VM. Rev up those VPNs!"
 	std::string instr = "4.chat,0.,";
 	instr += std::to_string(user.username->length() + STR_LEN(MSG));
 	instr += '.';
@@ -1981,11 +1957,11 @@ std::string CollabVMServer::GenerateUsername()
 {
 	// If the username is already taken generate a new one
 	uint32_t num = guest_rng_(rng_);
-	string username = "guest" + std::to_string(num);
+	string username = "forkie" + std::to_string(num);
 	// Increment the number until a username is found that is not taken
 	while (usernames_.find(username) != usernames_.end())
 	{
-		username = "guest" + std::to_string(++num);
+		username = "forkie" + std::to_string(++num);
 	}
 	return username;
 }
